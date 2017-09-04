@@ -2,8 +2,9 @@
     "name": "Stephen Weber",
     "short_name": "Stephen Weber",
     "description": "Stephen Weber's Personal Site",
-    "start_url": "./?home",
+    "start_url": "./",
     "display": "standalone",
+    "theme_color": "#F6F9FC",
     "background_color": "#F6F9FC",
     "icons": [{
             "src": "images/manifest/icon-192x192.png",
