@@ -1,6 +1,9 @@
 # StephenWeber.io Website
 Project is Polymer 2.0 project for StephenWeber.io website is based partially off the [Polymer Starter Kit](https://github.com/PolymerElements/polymer-starter-kit)
 
+## Lighthouse PWA Report Score of 100
+![Lighthouse](https://i.imgur.com/AaJSRcI.png)
+
 ## Quick Start
 
 #### Step 1
