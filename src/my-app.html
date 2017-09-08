@@ -207,7 +207,6 @@
                 // If no page was found in the route data, page will be an empty string.
                 // Default to 'home' in that case.
                 this.page = page || 'home';
-                console.log(this.page);
 
                 // Close a non-persistent drawer when the page & route are changed.
                 if (!this.$.drawer.persistent) {
@@ -218,7 +217,6 @@
             _pageChanged(page) {
                 // Load page import on demand. Show 404 page if fails
                 var resolvedPageUrl = this.resolveUrl(page + '.html');
-                console.log(page);
                 Polymer.importHref(
                     resolvedPageUrl,
                     null,

@@ -95,8 +95,7 @@
     <template is="dom-if" if="{{_isEven()}}">
         <div class="product-card app-grid">
             <div class="card">
-                
-                    <a href$="{{link}}"><iron-image sizing="cover" src="{{image}}" preload placeholder="{{placeholder}}"></iron-image></a>
+                <a href$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload fade placeholder="{{placeholder}}"></iron-image></a>
             </div>
             <div class="product-description even">
                 <h2>{{title}}</h2>
@@ -115,7 +114,7 @@
                     <p>{{description}} <a href$="{{link}}">Learn More</a></p>
                 </div>
                 <div class="card">
-                        <a href$="{{link}}"><iron-image sizing="cover" src="{{image}}" preload placeholder="{{placeholder}}"></iron-image></a>
+                    <a href$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload fade placeholder="{{placeholder}}"></iron-image></a>
                 </div>
             </div>
     </template>
@@ -156,7 +155,6 @@
             }
 
             _isOdd() {
-                console.log('called');
                 return Math.abs(this.index % 2) == 1;
             }
 
