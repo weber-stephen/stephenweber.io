@@ -41,6 +41,7 @@
             text-align: center;
             position: absolute;
             left: 0px;
+            top: 0px;
             width: 100%;
             font-size: 1.5rem;
             font-weight: 100;
@@ -51,38 +52,38 @@
             color: var(--app-font-color);
         }
 
-      app-drawer-layout:not([narrow]) [drawer-toggle] {
-        display: none;
-      }
-      app-header {
-        color: #fff;
-        background-color: var(--app-background-color);
-      }
+        app-drawer-layout:not([narrow]) [drawer-toggle] {
+            display: none;
+        }
+        app-header {
+            color: #fff;
+            background-color: var(--app-background-color);
+        }
 
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: #696969;
-        color: var(--app-font-secondary-color);
-      }
+        app-header paper-icon-button {
+            --paper-icon-button-ink-color: #696969;
+            color: var(--app-font-secondary-color);
+        }
 
         [hidden] {
           display: none !important;
         }
       
         .drawer-list {
-        margin: 0 20px;
+            margin: 0 20px;
         }
 
         .drawer-list a {
-        display: block;
-        padding: 0 16px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
-        line-height: 40px;
+            display: block;
+            padding: 0 16px;
+            text-decoration: none;
+            color: var(--app-secondary-color);
+            line-height: 40px;
         }
 
         .drawer-list a.iron-selected {
-        color: #fff;
-        background-color: var(--app-primary-color);
+            color: #fff;
+            background-color: var(--app-primary-color);
         }
 
         #app-drawer-toolbar {
