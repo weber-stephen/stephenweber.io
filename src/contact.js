@@ -1,8 +1,9 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="shared-styles.html">
-
-<dom-module id="contact-page">
-    <template>
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import './shared-styles.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+class ContactPage extends PolymerElement {
+  static get template() {
+    return html`
     <style include="shared-styles">
       :host {
         display: block;
@@ -35,14 +36,12 @@
       <p>Let's talk.<br>Just email me at:</p>
       <p id="email-link"><a href="mailto:me@stephenweber.io">me@stephenweber.io</a></p>
     </div>
-  </template>
-    <script>
-        class ContactPage extends Polymer.Element {
-            static get is() {
-                return 'contact-page';
-            }
-        }
+`;
+  }
 
-        window.customElements.define(ContactPage.is, ContactPage);
-    </script>
-</dom-module>
+  static get is() {
+      return 'contact-page';
+  }
+}
+
+window.customElements.define(ContactPage.is, ContactPage);

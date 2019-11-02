@@ -1,8 +1,8 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+import '@polymer/polymer/polymer-element.js';
+import '@polymer/app-layout/app-grid/app-grid-style.js';
+const $_documentContainer = document.createElement('template');
 
-<!-- shared styles for all views -->
-<dom-module id="shared-styles">
+$_documentContainer.innerHTML = `<dom-module id="shared-styles">
     <template>
     <style include="app-grid-style">
         
@@ -72,4 +72,14 @@
       }
     </style>
   </template>
-</dom-module>
+</dom-module>`;
+
+document.head.appendChild($_documentContainer.content);
+
+/* shared styles for all views */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+;
