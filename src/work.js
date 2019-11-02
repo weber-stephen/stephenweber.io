@@ -1,13 +1,12 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
-<link rel="import" href="shared-styles.html">
-
-<dom-module id="work-page">
-    <template>
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import './shared-styles.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+class WorkPage extends PolymerElement {
+    static get template() {
+        return html `
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 10px;
       }
       h1 {
           text-align: center;
@@ -59,22 +58,23 @@
         margin-right: 20px;
         margin-bottom: 100px;
       }
-      @media (min-width: 1000px) {
-        .awards {
-          --app-grid-columns: 3;
-          /* width: 1100px; */
-        }
-        iron-image, iron-image img {
-          width: 300px;
-        }
-      }
     </style>
 
     <h1>Work</h1>
     <section id="work">
       <div class="card">
-        <h3>R&ampD Lead Developer @ Experian</h3>
+        <h3>Manager of Innovation @ Experian</h3>
         <p>Dec 2015 - Present</p>
+        <ul>
+          <li>Creating more than 10 minimally viable products to test value with customers and create a roadmap for the product team.</li>
+          <li>Meeting with our amazing customers to understand, prototype solutions and iterate with them to map our future product roadmap.</li>
+          <li>Direct development and guide agile teams to enable faster delivery, higher quality products and consistency.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Lead R&D Developer @ Experian</h3>
+        <p>Dec 2015 - Feb 2018</p>
         <ul>
           <li>Developed a prototype hybrid Mobile app (using Ionic2 and Angular2) and through iteration with customers, took it too production. At launch it was already <strong>serving over 1,000 happy customers</strong> – taking a sales process that normally took <strong>a month to 2 minutes</strong>. Increasing sales by removing customer friction.</li>
           <li>Guided teams to use Agile and in some teams <strong>got 3x more done in the same amount of time</strong>.</li>
@@ -89,35 +89,35 @@
         <h3>Weber LLC</h3>
         <p>Jan 2006 - Present</p>
         <p>
-          <ul>
-            <li>Developed a hybrid mobile app called <a href="https://www.babykitapp.com">BabyKit</a> helps parent’s know what their baby will want next by enabling parents to easily track all the important things for their baby and then uses simple predictive AI to know what the baby will want next. Created a working prototype in a month and then took it to <strong>production in 2 months</strong>. Now it helps hundreds of parents and is successfully generating revenue. Using Ionic2, Angular4, Firebase and Google Compute.</li>
+          </p><ul>
+            <li>Developed a hybrid mobile app called BabyKit that helps parent’s know what their baby will want next by enabling parents to easily track all the important things for their baby and then uses simple predictive AI to know what the baby will want next. Created a working prototype in a month and then took it to <strong>production in 2 months</strong>. Had over 5,000 active users in 4 months and was successfully generating revenue. Using Ionic2, Angular4, Firebase and Google Compute. <a href="https://www.youtube.com/watch?v=SnCJ6g48EHs">Watch App Video</a></li>
             <li>Developed a hybrid mobile app called <a href="http://quake.stephenweber.io">QuakeShake</a> to help people know what earthquake they just felt easily. I had a working prototype in 3 hours and took it to production in less than a week. Now it’s a successful product with many users. Used Ionic1 and AngularJS</li>
             <li>Lead my team and developed <strong>over 40 different web applications</strong> for startups, corporations, celebrities and international governments. We <strong>continually iterated with the client</strong> and showed the client the functionality and design as it was built to get the crucial feedback to make the best product possible.</li>
             <li>Developed over <strong>30 of rich interactive websites, HTML5 games and applications</strong> for Dr. Seuss, Goosebumps, PBS Kids and many more amazing brands and assisted in design and art direction. Having kids play the games you make and then adjusting them in real-time is just an <strong>amazing experience</strong> that made it personally rewarding.</li>
             <li>Provided Account and Project Management that was flexible and clear. This gave my company a <strong>positively glowing reputation that made word-of-mouth marketing the only marketing my company ever needed</strong>.</li>
           </ul>
-        </p>
+        <p></p>
       </div>
       
       <div class="card">
         <h3>Senior UI Engineer @ CalAmp</h3>
         <p>Jun 2015 - Dec 2015</p>
         <p>
-          <ul>
+          </p><ul>
             <li>Designed and developed <strong>over 6 new features in our main product that increased that products revenue by over 22%</strong>.</li>
             <li>Worked with other programmers remotely to <strong>create our own standards, CI process and best practices to ensure the quality</strong> of our codebase</li>
             <li>While preforming my job I <strong>also designed and developed a new mobile application product</strong> for the VP of technology. Using Ionic and Angular I was able to create, iterate and <strong>get to a final version within 2 months on top of my normal job</strong>.</li> 
             <li>Assisted in the UI and UX improvement of multiple products requested by various product owners. Showed various clickable mockups and prototypes. The prototypes were so useful that many times I was asked to program them.</li>
             <li>Conducted over 12 user testing sessions to gather feedback and increase our various products usability.</li>
           </ul>
-        </p>
+        <p></p>
       </div>
       
       <div class="card">
         <h3>Lead Developer @ Advantage USA</h3>
         <p>Sept 2013 - June 2015</p>
         <p>
-          <ul>
+          </p><ul>
               <li>Helped launch a child company of Advantage’s called Mov-ology to be a product oriented company providing shopping cart abandonment SaaS solutions. So I designed and <strong>developed the front-end, back-end and customer client embed code for the initial working version</strong>. In the process creating a unique tracking technique that later got <strong>patented</strong>.</li>
               <li>Hired a small team to continue to improve the product and using Agile and development best practices we were able to more than double the features of the software in less than 6 months. Eventually having more features than the leading competitor.</li>
               <li>Continued to find related problems that our customers were having and bringing new possible solutions that became features of the product. Eventually these features increased our revenue 33%.</li>
@@ -126,7 +126,7 @@
               <li>Designed and developed our client performance tracking dashboards using Google Analytics APIs and various other tracking systems (including our own home grown tracking system). This allowed for true clarity on us helping our clients reach their goals and suggest changes and new ideas.</li>
               <li>Meeting with clients continually to evaluate their needs, get feedback, estimate efforts and cost and problem solving. Establishing a great relationship with these clients was absolutely key and I still talk and give advice to many of them today.</li>
           </ul>
-        </p>
+        <p></p>
       </div>
       
       <div class="card">
@@ -169,15 +169,12 @@
           </div>
         </div>
     </section>
-  </template>
+`;
+    }
 
-    <script>
-        class WorkPage extends Polymer.Element {
-            static get is() {
-                return 'work-page';
-            }
-        }
+    static get is() {
+        return 'work-page';
+    }
+}
 
-        window.customElements.define(WorkPage.is, WorkPage);
-    </script>
-</dom-module>
+window.customElements.define(WorkPage.is, WorkPage);

@@ -1,11 +1,10 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
-<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
-
-<dom-module id="product-card">
-
-    <template>
-
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-layout/app-grid/app-grid-style.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import '@polymer/iron-image/iron-image.js';
+class ProductCard extends PolymerElement {
+    static get template() {
+        return html `
     <style include="shared-styles">
 
       :host {
@@ -96,12 +95,12 @@
     <template is="dom-if" if="{{_isEven()}}">
         <div class="product-card app-grid">
             <div class="card">
-                <a href$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload fade placeholder="{{placeholder}}"></iron-image></a>
+                <a href\$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload="" fade="" placeholder="{{placeholder}}"></iron-image></a>
             </div>
             <div class="product-description even">
                 <h2>{{title}}</h2>
                 <h3>{{type}}</h3>
-                <p>{{description}} <a href$="{{link}}">Learn More</a></p>
+                <p>{{description}} <a href\$="{{link}}">Learn More</a></p>
                 
             </div>
         </div>
@@ -112,56 +111,47 @@
                 <div class="product-description odd">
                     <h2>{{title}}</h2>
                     <h3>{{type}}</h3>
-                    <p>{{description}} <a href$="{{link}}">Learn More</a></p>
+                    <p>{{description}} <a href\$="{{link}}">Learn More</a></p>
                 </div>
                 <div class="card">
-                    <a href$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload fade placeholder="{{placeholder}}"></iron-image></a>
+                    <a href\$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload="" fade="" placeholder="{{placeholder}}"></iron-image></a>
                 </div>
             </div>
     </template>
+`;
+    }
 
+    static get is() {
+        return 'product-card';
+    }
 
+    static get properties() {
+        return {
 
-    </template>
+            title: String,
 
-    <script>
-        class ProductCard extends Polymer.Element {
+            type: String,
 
-            static get is() {
-                return 'product-card';
-            }
+            img: String,
 
-            static get properties() {
-                return {
+            placeholder: String,
 
-                    title: String,
+            link: String,
 
-                    type: String,
+            description: String,
 
-                    img: String,
-
-                    placeholder: String,
-
-                    link: String,
-
-                    description: String,
-
-                    index: Number
-
-                }
-            }
-
-            _isEven() {
-                return this.index % 2 == 0;
-            }
-
-            _isOdd() {
-                return Math.abs(this.index % 2) == 1;
-            }
+            index: Number
 
         }
+    }
 
-        customElements.define(ProductCard.is, ProductCard);
-    </script>
+    _isEven() {
+        return this.index % 2 == 0;
+    }
 
-</dom-module>
+    _isOdd() {
+        return Math.abs(this.index % 2) == 1;
+    }
+}
+
+customElements.define(ProductCard.is, ProductCard);

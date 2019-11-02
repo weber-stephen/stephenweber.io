@@ -1,9 +1,8 @@
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
-
-<dom-module id="skill-card">
-
-    <template>
-
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+class SkillCard extends PolymerElement {
+  static get template() {
+    return html`
     <style include="shared-styles">
 
       :host {
@@ -111,43 +110,36 @@
         </div>
         <div class="percentage">{{value}}%</div>
     </div>
+`;
+  }
 
-  </template>
+  static get is() {
+      return 'skill-card';
+  }
 
-    <script>
-        class SkillCard extends Polymer.Element {
+  static get properties() {
+      return {
 
-            static get is() {
-                return 'skill-card';
-            }
+          title: String,
 
-            static get properties() {
-                return {
+          value: {
+              type: String,
+              observer: '_valueChanged'
+          }
 
-                    title: String,
+      }
+  }
 
-                    value: {
-                        type: String,
-                        observer: '_valueChanged'
-                    }
+  _valueChanged(input) {
 
-                }
-            }
+      this.value = input;
 
-            _valueChanged(input) {
+      var deg = 1.8 * parseInt(input);
 
-                this.value = input;
+      this.$.myGauge.style.transform = 'rotate(' + deg + 'deg)';
+      this.$.myGauge.style['-webkit-transform'] = 'rotate(' + deg + 'deg)';
+      this.$.myGauge.style['-moz-transform'] = 'rotate(' + deg + 'deg)';
+  }
+}
 
-                var deg = 1.8 * parseInt(input);
-
-                this.$.myGauge.style.transform = 'rotate(' + deg + 'deg)';
-                this.$.myGauge.style['-webkit-transform'] = 'rotate(' + deg + 'deg)';
-                this.$.myGauge.style['-moz-transform'] = 'rotate(' + deg + 'deg)';
-            }
-
-        }
-
-        customElements.define(SkillCard.is, SkillCard);
-    </script>
-
-</dom-module>
+customElements.define(SkillCard.is, SkillCard);
