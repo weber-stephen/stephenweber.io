@@ -100,7 +100,7 @@ class ProductCard extends PolymerElement {
             <div class="product-description even">
                 <h2>{{title}}</h2>
                 <h3>{{type}}</h3>
-                <p>{{description}} <a href\$="{{link}}">Learn More</a></p>
+                <p>{{description}}</p>
                 
             </div>
         </div>
@@ -111,7 +111,7 @@ class ProductCard extends PolymerElement {
                 <div class="product-description odd">
                     <h2>{{title}}</h2>
                     <h3>{{type}}</h3>
-                    <p>{{description}} <a href\$="{{link}}">Learn More</a></p>
+                    <p>{{description}}</p>
                 </div>
                 <div class="card">
                     <a href\$="{{link}}"><iron-image sizing="cover" src="{{img}}" preload="" fade="" placeholder="{{placeholder}}"></iron-image></a>
